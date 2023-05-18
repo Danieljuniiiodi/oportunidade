@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oportunidade exclusiva</title>
+  <style>
+    /* Estilos para centralizar o vídeo */
+    #video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+/* Estilos para o botão */
+#button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#button-container button {
+  padding: 10px 20px;
+  background-color: #00FF00;
+  color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.5);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos para o background */
+  body {
+  background-image: url('Design sem nome.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* Estilos para a headline */
+h1 {
+  color: #00FF00;
+  text-align: center;
+  font-weight: Righteous;
+  font-size: 50px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  font-family: "Righteous", sans-serif;
+  position: absolute;
+  top: 3%;
+  left: 6%;
+  text-shadow: 0 0 10px rgb( 0 ,255, 0);
+
+}
+
+/* Estilos para a contagem regressiva */
+#countdown {
+  color: #FF0000;
+  font-weight: bold;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 4px;
+  text-shadow: 0 0 10px rgb( 255, 0, 0);
+}
+
+/* Estilos para o texto abaixo do botão */
+#text-below-button {
+  color: #00FF00;
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 40px; 
+  text-shadow: 0 0 10px rgb( 0 ,255, 0);
+}
+
+/* Estilos para a frase de direitos autorais */
+footer {
+  color: #888888;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+/* Estilos para o aviso do Facebook */
+#facebook-notice {
+  color: #888888;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 30px;
+}
+ </style>
+  <script>
+    // Função para exibir o botão após 2 minutos
+    function showButton() {
+      document.getElementById('button-container').style.display = 'block';
+    }
+// Definir o tempo de espera em milissegundos
+const waitTime = 2 * 60 * 1000; // 2 minutos
+
+// Agendar a exibição do botão após o tempo de espera
+setTimeout(showButton, waitTime);
+
+
+
+
+   // Função para a contagem regressiva
+    function countdown() {
+      var endDate = new Date();
+      endDate.setMinutes(endDate.getMinutes() + 2); // Adiciona 2 minutos à data atual
+      
+      var timer = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = endDate - now;
+        
+        // Cálculos para dias, horas, minutos e segundos
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Exibição da contagem regressiva
+        document.getElementById("countdown").innerHTML = minutes + " MINUTO E  " + seconds + " SEGUNDOS PARA TER SEU ACESSO";
+        
+        // Verificação se a contagem regressiva chegou a zero
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").innerHTML = "PARABÉNS, SEU ACESSO FOI LIBERADO ACIMA";
+        }
+      }, 1000); // Atualização a cada segundo
+    }
+    
+    // Iniciar a contagem regressiva ao carregar a página
+    window.onload = countdown;
+  </script>
+</head>
+<body>
+  <h1>   VEJA O VÍDEO ABAIXO PARA TER ACESSO EXCLUSIVO COM 100% DE DESCONTO SÓ HOJE.  </h1>
+  <div id="video-container">
+    <iframe width="800" height="500" src="https://www.youtube.com/embed/HgYCM8be7PM?autoplay=1&controls=0&disablekb=1&modestbranding=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div id="button-container" style="display: none;">
+    <a href="https://bit.ly/41BX7Jb" target="_blank"><button>ENTRAR GRATUITAMENTE</button></a>
+  </div>
+  <div id="countdown"></div>
+  <div id="text-below-button">ATENÇÃO!  8 VAGAS GRÁTIS DISPONÍVEIS</div>
+  <footer>Copyright © - todos os direitoss reservados</footer>
+  <div id="facebook-notice">ATENÇÃO: Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam.</div>
+</body>
+</html>
